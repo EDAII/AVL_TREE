@@ -30,5 +30,26 @@ int main(){
   tree->insert(3);
 
   tree->print();
+
+
+  cout << "finding 7" << endl;
+  
+  Node* find = tree->find(7);
+
+  if(find != nullptr){
+    cout << find->get_value() << endl;
+  } else {
+    cout << "Not found" << endl;
+  }
+  
+  cout << "finding 70" << endl;
+  find = tree->find(70);
+
+  if(find != nullptr){
+    cout << find->get_value() << endl;
+  } else {
+    cout << "Not found" << endl;
+  }
+
 	return 0;
 }
