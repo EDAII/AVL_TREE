@@ -51,5 +51,19 @@ int main(){
     cout << "Not found" << endl;
   }
 
+
+  cout << "Deleting 33" << endl;
+  tree->deleteNode(33);
+  cout << "Deleting 25" << endl;
+  tree->deleteNode(25);
+  cout << "Deleting 3" << endl;
+  tree->deleteNode(3);
+  cout << "Deleting 1" << endl;
+  tree->deleteNode(1);
+  cout << "Deleting 7" << endl;
+  tree->deleteNode(7);
+
+  tree->print();
+
 	return 0;
 }

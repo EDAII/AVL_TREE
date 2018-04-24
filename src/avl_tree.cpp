@@ -104,6 +104,51 @@ AVLTree::left_rotate(Node*& root){
   return root;
 }
 
+int
+AVLTree::deleteMinimumNode(Node*& root){
+  int aux;
+  if(root->get_left() == nullptr){
+    aux = root->get_value();
+    root = root->get_right();
+    return aux;
+  }
+  else{
+    aux = deleteMinimumNode(root->get_left());
+    return aux;
+  }
+}
+
+void
+AVLTree::deleteNode(int value, Node*& root){
+  Node* aux;
+  if(root == nullptr)
+    std::cout << "Node " << value << " not found!" << std::endl;
+  else if(value < root->get_value())
+    deleteNode(value, root->get_left());
+  else if(value > root->get_value())
+    deleteNode(value, root->get_right());
+  else if((root->get_left() == nullptr) && (root->get_right() == nullptr)){
+    //***
+    aux = root;
+    delete aux;
+    root = nullptr;
+    std::cout << "Node " << value << " deleted!" << std::endl;
+  }
+  else if(root->get_left() == nullptr){
+    aux = root;
+    delete aux;
+    root = root->get_right();
+    std::cout << "Node " << value << " deleted!" << std::endl;
+  }
+  else if(root->get_right() == nullptr){
+    aux = root;
+    root = root->get_left();
+    delete aux;
+    std::cout << "Node " << value << " deleted!" << std::endl;
+  }
+  else
+    root->set_value(deleteMinimumNode(root->get_right()));
+}
  
 /*****publics methods*******/
 
@@ -126,6 +171,11 @@ AVLTree::find(int element){
 Node*&
 AVLTree::insert(int element){
   return insert(element, this->root);
+}
+
+void
+AVLTree::deleteNode(int element){
+  return deleteNode(element, this->root);
 }
 
 void

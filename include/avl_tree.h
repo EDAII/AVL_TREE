@@ -13,10 +13,16 @@ class AVLTree{
     void balance(Node*& root, int element);
     Node*& right_rotate(Node*& root);
     Node*& left_rotate(Node*& root);
+    int deleteMinimumNode(Node*& root);
+    void deleteNode(int value, Node*& root);
+    void inorder(Node*& root);
   public:
     void print();
     Node* find(int element);
     Node*& insert(int value);
+    void deleteNode(int value);
+    void inorder();
+
 };
 
 #endif
