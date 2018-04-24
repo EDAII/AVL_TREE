@@ -15,13 +15,11 @@ class AVLTree{
     Node*& left_rotate(Node*& root);
     int deleteMinimumNode(Node*& root);
     void deleteNode(int value, Node*& root);
-    void inorder(Node*& root);
   public:
     void print();
     Node* find(int element);
     Node*& insert(int value);
     void deleteNode(int value);
-    void inorder();
 
 };
 

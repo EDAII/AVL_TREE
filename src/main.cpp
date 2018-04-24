@@ -52,6 +52,8 @@ int main(){
   }
 
 
+  cout << "Deleting 78" << endl;
+  tree->deleteNode(78);
   cout << "Deleting 33" << endl;
   tree->deleteNode(33);
   cout << "Deleting 25" << endl;

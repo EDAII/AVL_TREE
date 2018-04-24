@@ -132,19 +132,16 @@ AVLTree::deleteNode(int value, Node*& root){
     aux = root;
     delete aux;
     root = nullptr;
-    std::cout << "Node " << value << " deleted!" << std::endl;
   }
   else if(root->get_left() == nullptr){
     aux = root;
     delete aux;
     root = root->get_right();
-    std::cout << "Node " << value << " deleted!" << std::endl;
   }
   else if(root->get_right() == nullptr){
     aux = root;
     root = root->get_left();
     delete aux;
-    std::cout << "Node " << value << " deleted!" << std::endl;
   }
   else
     root->set_value(deleteMinimumNode(root->get_right()));
